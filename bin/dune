@@ -1,7 +1,9 @@
 (executable
  (name main)
  (modules main)
- (libraries game))
+ (libraries Game lwt lwt.unix websocket ws)
+ (preprocess
+  (pps lwt_ppx)))
 
 (executable
  (name combs_printer)
@@ -11,4 +13,11 @@
 (executable
  (name solo_game)
  (modules solo_game)
- (libraries Game ANSITerminal lwt))
+ (libraries Game ANSITerminal lwt lwt.unix))
+
+(executable
+ (name client)
+ (modules client)
+ (libraries Game websocket dream lwt lwt.unix ANSITerminal hyper)
+ (preprocess
+  (pps lwt_ppx)))
