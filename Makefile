@@ -9,8 +9,14 @@ utop:
 test:
 	OCAMLRUNPARAM=b dune exec test/main.exe
 
+main:
+	OCAMLRUNPARAM=b dune exec bin/main.exe
+
 solo-play:
 	OCAMLRUNPARAM=b dune exec bin/solo_game.exe
+
+client:
+	OCAMLRUNPARAM=b dune exec bin/client.exe
 
 combos:
 	OCAMLRUNPARAM=b dune exec bin/combs_printer.exe
@@ -23,5 +29,5 @@ clean:
 	dune clean
 	rm -f 24_battle_royale.zip
 
-doc:
+docs:
 	dune build @doc

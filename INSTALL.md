@@ -1,6 +1,20 @@
 INSTRUCTIONS ON HOW TO BUILD:
 
-Run the following command [in this directory]:
+Run the following commands [in this directory]:
+opam install ANSITerminal
+opam install dream
+opam install websocket
+opam install hyper
+opam install ws-server
+opam install websocket-lwt-unix
+
+To play the offline game:
 make solo-play
 
-ENJOY! [No extra libraries needed to be installed]
+To start a server:
+make main
+
+To start a client that accesses the server:
+make client
+
+ENJOY!
